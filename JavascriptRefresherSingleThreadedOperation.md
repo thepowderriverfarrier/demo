@@ -2,33 +2,33 @@
 
 
 #Table of Contents
-1. [Call Stack](#Call Stack)
-2. [Creation Phase](#Creation Phase)
-3. [Execution Phase](#Execution Phase)
-4. [Lexical Environment](#Lexical Environment)
-5. [Asynchronous Callbacks](#Asynchronous Callbacks)
-6. [Everything is an object](#Everything is an object)
-7. [By Reference By Value](#By Reference By Value)
+1. [Call_Stack](#CallStack)
+2. [Creation Phase](#CreationPhase)
+3. [Execution Phase](#ExecutionPhase)
+4. [Lexical Environment](#LexicalEnvironment)
+5. [Asynchronous Callbacks](#AsynchronousCallbacks)
+6. [Everything is an object](#Everythingisanobject)
+7. [By Reference By Value](#ByReferenceByValue)
 8. [this](#this)
-9. [Spread Operator](#Spread Operator)
+9. [Spread Operator](#SpreadOperator)
 10. [IIFE](#IIFE)
 11. [Closures](#Closures)
 12. [Factories](#Factories)
-13. [Prototypical Inheritance](#Prototypical Inheritance)
-14. [Var Let Const](#Var Let Const)
-15. [Arrow Functions](#Arrow Functions)
+13. [Prototypical Inheritance](#PrototypicalInheritance)
+14. [Var Let Const](#VarLetConst)
+15. [Arrow Functions](#ArrowFunctions)
 16. [Deconstructing](#Deconstructing)
 
 
 
-## The Javascript Call Stack <a name="Call Stack"></a> ##
+## The Javascript Call Stack <a name="CallStack"></a> ##
 ![](https://cdn-images-1.medium.com/max/1600/1*-MMBHKy_ZxCrouecRqvsBg.png)
 
 * The diagram above is to be studied and understood thoroughly
 
 ## Creation and Execution Phases
 
-#### Creation Phase <a name="Creation Phase"></a>
+#### Creation Phase <a name="CreationPhase"></a>
 * global object
 * 'this'
 * outer environment reference as global execution context
@@ -36,12 +36,12 @@
 * variables set to **undefined**
 * functions declared
 
-#### Execution Phase <a name="Execution Phase"></a>
+#### Execution Phase <a name="ExecutionPhase"></a>
 * code executed **line by line**
 * global execution context brings *this* and functions and outer link into play
 * *scope* is where a variable is available 
 
-#### Lexical Environment <a name="Lexical Environment"></a>
+#### Lexical Environment <a name="LexicalEnvironment"></a>
 * where functions and variables are declared is not important; **where they are invoked is the key** 
 
 ![](https://miro.medium.com/max/902/1*Jr0HIJap0S2ILbNNTPhjBw.png)
@@ -49,10 +49,10 @@
 * for **each function invocation/call a new execution context** is created
 * as each function completes it is popped off the stack
 
-#### Javascript's Solution to Blocking -- Asynchronous Callbacks <a name="Asynchronous Callbacks"></a>
+#### Javascript's Solution to Blocking -- AsynchronousCallbacks <a name="Asynchronous Callbacks"></a>
 * browser has features that operate outside the scope of the Javascript runtime engine
 
-#### Javascript - Everything is an object ... <a name="Everything is an object"></a>
+#### Javascript - Everything is an object ... <a name="Everythingisanobject"></a>
 * except primitive types
 * this includes unnamed functions assigned to variables as in the following code
 ```
@@ -65,7 +65,7 @@ var unnamedFunction = function()
    unnamedFunction()
 ```
 
-#### By Reference By Value <a name="By Reference By Value"></a>
+#### By Reference By Value <a name="ByReferenceByValue"></a>
 * When a variable is assigned a primitive **value** and then another variable is set to equal (assigned) the first variable the second variable actually receives a *copy* of the primitive value not the original primitive value because the two variables are sitting in two different memory spaces in Javascript
 
 * when a variable is set to an object then another variable is set equal (assigned) to the original variable the new variable gets a **reference** to the same location in memory as the first, no copy is made
@@ -73,7 +73,7 @@ var unnamedFunction = function()
 #### 'this' <a name="this"></a>
 * during the running of a function a new execution context is created which contains its variables and its outer environment and the this keyword.  Depending on how the function is called will determine what *this* refers to.  In the global context *this* refers to the global object; when *this* is called inside an object method it references the object that the method is sitting inside of.
 
-#### Spread Operator <a name="Spread Operator"></a>
+#### Spread Operator <a name="SpreadOperator"></a>
 
 ```javascript
 	const numbersArray = [2,4,6]
@@ -109,7 +109,7 @@ Function init() {
 #### Factories <a name="Factories"></a>
 * when a Javascript function creates an object it is referred to as a factory and functions much like in other object oriented languages
 
-#### Prototypical Inheritance <a name="Prototypical Inheritance"></a>
+#### Prototypical Inheritance <a name="PrototypicalInheritance"></a>
 * one object gets access to the properties and methods of another object
 
 ```javascript
@@ -118,14 +118,14 @@ function myFunction() {
   }
 ```
 
-#### Var Let Const <a name="Var Let Const"></a>
+#### Var Let Const <a name="VarLetConst"></a>
 * *var* keyword is scoped making it available outside the function
 * *var* variables are available to be redeclared which sets up the possibility of accidentally redeclaring variables
 * *let* keyword is block scoped meaning it is only available within the block it is created in
 * *let* variables are not available to be redeclared
 * *const*  variable is block scoped and does allow for the variable to be changed if the variable is an object; while a *const* object cannot be updated the properties within it can be
 
-#### Arrow Functions <a name="Arrow Functions"></a>
+#### Arrow Functions <a name="ArrowFunctions"></a>
 * standard functions
 ```javascript
 function sum(a, b) {
