@@ -2,7 +2,7 @@
 
 
 #Table of Contents
-1. [Call_Stack](#CallStack)
+1. [Call Stack](#CallStack)
 2. [Creation Phase](#CreationPhase)
 3. [Execution Phase](#ExecutionPhase)
 4. [Lexical Environment](#LexicalEnvironment)
